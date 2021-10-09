@@ -21,7 +21,18 @@
   <component name="ChangeListManager">
     <list default="true" id="803c1f6b-5b38-40f3-a11b-b6096b6108a9" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Lab2/.idea/Lab2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/app/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/images/Vegetables.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/settings/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/settings/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lab1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />

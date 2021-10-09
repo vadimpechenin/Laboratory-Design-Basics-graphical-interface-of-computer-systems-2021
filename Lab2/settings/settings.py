@@ -6,6 +6,14 @@ TOP = 30
 WIDTH = 400
 HEIGHT = 300
 
+#Объекты для записи данных
+import numpy as np
+
+points_of_center= []
+Angle1 = np.zeros(2)
+Angle2 = np.zeros(2)
+filename = 'points.txt'
+
 NAME = 'Лабораторная работа 2'
 TEXTBUTTONLOAD = 'Загрузить изображение'
 TEXTBUTTONSAVE = 'Сохранить'
