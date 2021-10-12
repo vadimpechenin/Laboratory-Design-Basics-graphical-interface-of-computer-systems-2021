@@ -2,7 +2,7 @@
 Класс для прорисовки и выполнения обработки событий с виджетов
 """
 from settings import settings
-from PyQt5.QtWidgets import QMainWindow, QWidget, QPushButton, QLabel, QFileDialog, QVBoxLayout, QHBoxLayout
+from PyQt5.QtWidgets import QMainWindow, QWidget, QPushButton, QLabel, QFileDialog, QGridLayout
 from PyQt5.QtGui import QPixmap, QImage, QPainter, QPen, QBrush, QIcon, QColor, QPainterPath
 from PyQt5.Qt import QFont
 from PyQt5.QtCore import pyqtSlot, Qt, QPoint, QRect
@@ -20,10 +20,10 @@ class App(QMainWindow):
         self.top = settings.TOP
         self.width = settings.WIDTH
         self.height = settings.HEIGHT
-        self.main_layout = QVBoxLayout()
+        self.main_layout = QGridLayout()
         self.central_widget = QWidget(self)
+        self.image = None
         self.current_image = None
-        self.btn_layout = QHBoxLayout()
         self.initUI()
 
 
@@ -38,16 +38,18 @@ class App(QMainWindow):
         self.buttonLoad.move(40, 10)
         self.buttonLoad.setMinimumWidth(160)
         self.buttonLoad.clicked.connect(self.onClickLoad)
-        self.btn_layout.addWidget(self.buttonLoad)
+        self.main_layout.addWidget(self.buttonLoad, 0, 0)
 
         self.buttonSave = QPushButton('button', self)
         self.buttonSave.setText(settings.TEXTBUTTONSAVE)
         self.buttonSave.setStyleSheet('QPushButton {background-color: ' + settings.BUTTONSAVEBACKGROUNDCOLOR+ '; color: '+ settings.BUTTONSAVETEXTCOLOR + ';}')
         self.buttonSave.move(220, 10)
         self.buttonSave.clicked.connect(self.onClickSave)
-        self.btn_layout.addWidget(self.buttonSave)
+        self.main_layout.addWidget(self.buttonSave, 0, 1)
 
         self.central_widget.setLayout(self.main_layout)
+        self.image = TestRect()
+        self.main_layout.addWidget(self.image, 1, 0, 2, 0, Qt.AlignHCenter)
         self.setCentralWidget(self.central_widget)
         #Окно
         #self.image = QImage()
@@ -62,14 +64,13 @@ class App(QMainWindow):
         fname = QFileDialog.getOpenFileName(self,"Открыть Файл",None,"Image (*.png *.jpg *jpeg)")[0]
         fname1 = fname.split('/')
         path = fname1[-2] + '/' + fname1[-1]
-        image = TestRect()
-        self.main_layout.addWidget(image)
+        
         uploaded = cv2.imread(path)
         rgb_img = cv2.cvtColor(uploaded, cv2.COLOR_BGR2RGB)
         resized = cv2.resize(rgb_img, (settings.WIDTH - 40, settings.HEIGHT - 40))
         height, width = settings.WIDTH - 40, settings.HEIGHT - 40
         self.current_image = QImage(resized, height, width, QImage.Format_RGB888)
-        image.setPixmap(QPixmap(self.current_image))
+        self.image.setPixmap(QPixmap(self.current_image))
 
     @pyqtSlot()
     def onClickSave(self):
